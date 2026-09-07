@@ -9,6 +9,7 @@ Agent se připojuje ke dvěma MCP serverům:
 
 ---
 
+
 ## Architektura
 
 Vlastní MCP server a agent jsou samostatné Python aplikace a běží v oddělených Docker kontejnerech.
@@ -20,6 +21,7 @@ http://mcp-server:8000/mcp
 ```
 
 ---
+
 
 ## Struktura projektu
 
@@ -73,7 +75,8 @@ Obě aplikace mají vlastní `pyproject.toml`, ale při lokálním vývoji mohou
 
 ---
 
-# MCP server
+
+## MCP server
 
 Vlastní MCP server je implementovaný pomocí `FastMCP`.
 
@@ -103,7 +106,8 @@ Jaký mám průměr ze všech předmětů?
 
 ---
 
-# Sequential Thinking MCP server
+
+## Sequential Thinking MCP server
 
 Druhým MCP serverem je Sequential Thinking MCP server z referenčních MCP serverů:
 
@@ -135,9 +139,9 @@ který je vhodný zejména pro složitější problémy vyžadující:
 
 ---
 
-# Konfigurace
+## Konfigurace
 
-## `.env`
+### `.env`
 
 V rootu projektu vytvořte soubor:
 
@@ -153,6 +157,7 @@ OPENAI_API_KEY=sk-...
 
 ---
 
+
 ## Požadavky
 
 - Docker
@@ -160,15 +165,16 @@ OPENAI_API_KEY=sk-...
 - OpenAI API key
 - připojení k internetu
 
-# Spuštění
 
-## 1. Build a spuštění MCP serveru na pozadí
+## Spuštění
+
+### 1. Build a spuštění MCP serveru na pozadí
 
 ```bash
 docker compose up -d --build mcp-server
 ```
 
-## 2. Build a spuštění interaktivního agenta
+### 2. Build a spuštění interaktivního agenta
 
 ```bash
 docker compose run --build --rm agent
@@ -193,7 +199,7 @@ You:
 
 ---
 
-# Komunikace s agentem
+## Komunikace s agentem
 
 Agent běží v jednoduché terminálové smyčce.
 
@@ -225,9 +231,9 @@ quit
 
 ---
 
-# Příklady dotazů
+## Příklady dotazů
 
-## Školní MCP tools
+### Školní MCP tools
 
 ```text
 Jakou mám známku z matematiky?
@@ -253,7 +259,7 @@ Zjisti mou známku z chemie a potom můj celkový průměr.
 
 ---
 
-## Sequential Thinking MCP tool
+### Sequential Thinking MCP tool
 
 Pro kontrolu druhého MCP serveru jsou vhodné složitější úlohy:
 
@@ -275,7 +281,7 @@ Navrhni postup migrace do Docker Compose a rozděl řešení do logických krok�
 
 ---
 
-# Lokální vývoj pomocí uv
+## Lokální vývoj pomocí uv
 
 Projekt je `uv workspace`.
 
