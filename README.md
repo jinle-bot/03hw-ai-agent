@@ -76,7 +76,7 @@ Obě aplikace mají vlastní `pyproject.toml`, ale při lokálním vývoji mohou
 ---
 
 
-## MCP server
+## Vlastní MCP server
 
 Vlastní MCP server je implementovaný pomocí `FastMCP`.
 
